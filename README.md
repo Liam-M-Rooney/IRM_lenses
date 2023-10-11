@@ -14,27 +14,50 @@ R=(r^2+〖z_N〗^2)⁄(2∙z_N )					Eq. 2
 The measured radius of curvature for each lens (R2) is calculated using the _Radius Analysis_ script. The R-value for each radius was compiled into a histogram that compared the experimental measurements to the theoretical R2 (i.e., the manufacturer quoted value). The maximum peak position from each histogram determined the R2 value for each lens.
 
 The variable parameters are listed below for each script.
+
 _**Calibration**_:
+
 Update directory to location of prepared .PNG file and add to code directory.
+
 L36 - Title of .PNG file.
+
 L50 - [x , y] centre coordinates determined in FIJI.
+
 L58 - radius (r), should be less than half the width of the .PNG image in pixels.
+
 L66 - angle, in radians, can be varied to verify parameters at different radii.
+
 L107/108 - detection threshold for interference orders, should be altered to verify that all orders are detected around various radii by changing with angle (L66).
+
 L116 - wavelength in meters, should be updated according to image acquisition settings.
 
+
 _**3D Reconstruction**_:
+
 L34, 44, 52, 59 - should be copied from optimised _Calibration_ script.
+
 L76 - determines the number of interference orders that are reconstructed. This should be set high to begin with (i.e., greater than the number of orders along the radius) and then reduced according to the prompt following the first run of the script. 'np.linspace(0, max-1, max)' where 'max' is the total number of orders along a given measurement radius.
+
 L145 - scaling factor for reconstruction (meters/pixels), should be obtained from .PNG parameters in FIJI.
+
 L153/153 - detection thresholds determined from _Calibration_ script.
+
 L170 - 'k' = colour, where 'k' = black, 'red' = red, 'green' green etc.
+
 L186 - the theoretical curvature (m), should be updated according to the commercial lens manufacturer specifications.
+
 L196 - name of output file for analysing radius of curvature.
+
 L199-129 - theoretical curvature code; update parameters from manufacturer for comparison of experimental and theoretical curvatures.
+
 L203 - 'R' = the theoretical curvature (m), should be updated according to the commercial lens manufacturer specifications.
 
+
 _**Radial Analysis**_:
+
 L25 - update to match analysis file name/L196 from _3D Reconstruction_ script.
+
 L38 - Update to theoretical radius of curvature (m).
+
 L53 - Update to theoretical radius of curvature (m).
+
