@@ -1,4 +1,4 @@
-# IRM_lenses
+# A computational method to reconstruct the topology of convex lens specimens and calculate their radius of curvature.
 3D reconstruction and analysis of lens specimens using Interference Reflection Microscopy image data.
 
 IRM image data should be exported as a .PNG file. Images should be cropped and median filtered (σ = 2) to remove any high-frequency noise in the image, and appropirately contrast adjusted.
